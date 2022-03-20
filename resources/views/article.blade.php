@@ -17,7 +17,7 @@
                     class="text-decoration-none">{{ $article->category->name }}</a>
             </h6>
             <h6>By:
-                <a href="#" class="text-decoration-none">
+                <a href="/authors/{{ $article->author->username }}" class="text-decoration-none">
                     {{ $article->author->name }}
                 </a>
             </h6>

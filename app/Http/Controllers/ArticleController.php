@@ -13,7 +13,8 @@ class ArticleController extends Controller
             "title" => "Halaman Artikel",
             "name" => "Daffa M Azhar",
             "email" => "daffaazhar.19051@mhs.its.ac.id",
-            "articles" => Article::all()
+            // "articles" => Article::all()
+            "articles" => Article::latest()->get(),
         ]);
     }
 
