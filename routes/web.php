@@ -94,8 +94,9 @@ Route::get("/categories", function(){
         'categories' => Category::all()
     ]);
 });
+
 Route::get("/categories/{category:slug}", function(Category $category){
-    return view('category', [
+    return view('article', [
         'title' => $category->name,
         'articles' => $category->article,
         'category' => $category->name

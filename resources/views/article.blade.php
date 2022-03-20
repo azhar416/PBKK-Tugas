@@ -1,21 +1,31 @@
 @extends('template')
 
 @section('container')
-    <h1>Halaman Artikel Berita</h1>
-    <h5>Editor: {{ $name }} | {{ $email }}</h5>
+    {{-- <h1>Halaman Artikel Berita</h1> --}}
+    <h1> {{ $title }}</h1>
+    {{-- <h5>Editor: {{ $name }} | {{ $email }}</h5> --}}
     <hr />
     @foreach ($articles as $article)
-        <article class="mb-5">
+        <article class="mb-5 border-bottom pb-3">
             <h3>
-                <a href="/article/{{ $article->slug }}">
+                <a href="/article/{{ $article->slug }}" class="text-decoration-none">
                     {{ $article->title }}
                 </a>
             </h3>
             <h6>Category:
-                <a href="/categories/{{ $article->category->slug }}">{{ $article->category->name }}</a>
+                <a href="/categories/{{ $article->category->slug }}"
+                    class="text-decoration-none">{{ $article->category->name }}</a>
             </h6>
-            <h6>By: {{ $article->author }}</h6>
+            <h6>By:
+                <a href="#" class="text-decoration-none">
+                    {{ $article->author->name }}
+                </a>
+            </h6>
             <p>{{ $article->excerpt }}</p>
+
+            <a href="/article/{{ $article->slug }}" class="text-decoration-none">
+                Read More
+            </a>
         </article>
     @endforeach
 @endsection
